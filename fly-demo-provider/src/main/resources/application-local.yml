@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        group: dev
+        namespace: public
+        service: ${spring.application.name}
+        username: nacos
+        password: nacos
+      config:
+        enabled: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://127.0.0.1:5432/fly-platform
+    username: postgres
+    password: admin
+#mybatis 配置
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+

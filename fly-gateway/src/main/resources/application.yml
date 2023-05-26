@@ -1,0 +1,25 @@
+server:
+  port: 8079
+spring:
+  application:
+    name: fly-gateway
+  profiles:
+    active: local
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: fly-demo-provider  # 路由ID 项目名称且唯一
+          uri: lb://fly-demo-provider #路由的目标地址 服务名称 也就是相当于调用https://IP:8081/
+          predicates: #路由断言 拦截判断请求路径是否符合 如下规则。
+            - Path=/provider/**
+#          filters:  #为请求添加一个请求头 值为test.
+#            - AddRequestHeader=author, tesst
+
+logging:
+  file:
+    path:
+    name: chao-product.log

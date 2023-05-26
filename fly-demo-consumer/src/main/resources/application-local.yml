@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        group: dev
+      #        namespace: b93bf6ad-90e5-4843-8a18-0017cf02e777
+      config:
+        enabled: false
+
+

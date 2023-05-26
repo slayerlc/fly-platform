@@ -1,0 +1,15 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /provider
+spring:
+  application:
+    name: fly-demo-provider
+  profiles:
+    active: local
+#logging:
+#  file:
+#    path:
+#    name: chao-product.log
+#  level:
+#    com.alibaba.nacos.client.naming: error
